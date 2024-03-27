@@ -1,12 +1,12 @@
 # Data Explorer
 
-In today's data-driven world, the ability to explore and understand data is crucial. However, many non-technical individuals struggle with SQL queries and have a hard time verifying if their SQL gives the correct result. Data Explorer is here to help.
+In today's data-driven world, the ability to explore and understand data is crucial. However, many non-technical individuals struggle with SQL queries and have a hard time verifying if their SQL gives the correct result. Data Explorer is here to help. With Data Explorer, you can query your data using natural language. Simply ask a question or state a request in plain English, and Data Explorer will convert that into SQL to be executed against your database.
 
 This tool supports a wide range of databases including SQLite, MySQL, PostgreSQL, Oracle, and SQL Server. It's designed to be user-friendly and accessible to a wide range of users, from business analysts to product managers.
 
 ## Features
 
-- **AI-Powered Data Exploration**: Data Explorer uses advanced AI techniques to provide deep insights into your data.
+- **Natural Language Querying**: Query your data using natural language. Data Explorer will convert your questions or requests into SQL to be executed against your database. This feature is powered by advanced AI techniques to ensure accurate and meaningful results.
 
 - **Support for Multiple Databases**: Data Explorer supports SQLite, MySQL, PostgreSQL, Oracle, and SQL Server. This wide range of database support ensures that you can use Data Explorer regardless of your database of choice.
 
