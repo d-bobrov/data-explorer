@@ -1,6 +1,6 @@
-namespace DataExplorer.Common.SchemaGenerators.Entities;
+namespace DataExplorer.Common.SchemaGenerators.Sqlite.Entities;
 
-public class SqliteColumnInfo
+public class ColumnInfo
 {
   public required string Name { get; set; }  
   public required string Type { get; set; }

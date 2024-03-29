@@ -1,7 +1,7 @@
 using System.Data.Common;
 using Dapper;
-using DataExplorer.Common.SchemaGenerators.Entities;
 using DataExplorer.Common.SchemaGenerators.Models;
+using DataExplorer.Common.SchemaGenerators.Sqlite.Entities;
 
 namespace DataExplorer.Common.SchemaGenerators.Sqlite;
 
@@ -20,7 +20,7 @@ public class SqliteSchemaGenerator : BaseSchemaGenerator
         {
             Tables = new List<DatabaseTable>()
         };
-        List<SqliteSchemaTable> tablesViews = (await _connection.QueryAsync<SqliteSchemaTable>(FetchTablesViewsQuery)).ToList();
+        List<SchemaTable> tablesViews = (await _connection.QueryAsync<SchemaTable>(FetchTablesViewsQuery)).ToList();
         if (tablesViews.Count > 0)
         {
            foreach (var tableView in tablesViews)
@@ -31,7 +31,7 @@ public class SqliteSchemaGenerator : BaseSchemaGenerator
                        "table", tableView.Name
                    }
                };
-               List<SqliteColumnInfo> columns = (await _connection.QueryAsync<SqliteColumnInfo>(FetchColumns, parameters)).ToList();
+               List<ColumnInfo> columns = (await _connection.QueryAsync<ColumnInfo>(FetchColumns, parameters)).ToList();
                tableView.Columns = columns;
            }
             result.Tables = _mapTables(tablesViews);
@@ -41,7 +41,7 @@ public class SqliteSchemaGenerator : BaseSchemaGenerator
         return result;
     }
 
-    private List<DatabaseTable> _mapTables(List<SqliteSchemaTable> tablesFromDb)
+    private List<DatabaseTable> _mapTables(List<SchemaTable> tablesFromDb)
     {
         List<DatabaseTable> result = new();
         foreach (var tableFromDb in tablesFromDb)
@@ -57,7 +57,7 @@ public class SqliteSchemaGenerator : BaseSchemaGenerator
         return result;
     }
 
-    private List<TableColumn> _mapColumns(List<SqliteColumnInfo> columnsFromDb)
+    private List<TableColumn> _mapColumns(List<ColumnInfo> columnsFromDb)
     {
         List<TableColumn> result = new();
         foreach (var columnFromDb in columnsFromDb)
