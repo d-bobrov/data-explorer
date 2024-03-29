@@ -1,3 +1,4 @@
+using System.Data.Common;
 using DataExplorer.Common.SchemaGenerators.Models;
 
 namespace DataExplorer.Common.SchemaGenerators;
@@ -5,11 +6,11 @@ namespace DataExplorer.Common.SchemaGenerators;
 public abstract class BaseSchemaGenerator
 {
 
-    protected readonly string _connectionString;
+    protected readonly DbConnection _connection;
 
-    protected BaseSchemaGenerator(string connectionString)
+    protected BaseSchemaGenerator(DbConnection connection)
     {
-        _connectionString = connectionString;
+        _connection = connection;
     }
 
     public abstract Task<DatabaseSchema> Generate();
