@@ -1,0 +1,3 @@
+namespace DataExplorer.Api.Commands.TranslateNaturalLanguageToSql;
+
+public record TranslateNaturalLanguageToSqlResponse(string Sql);

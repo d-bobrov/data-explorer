@@ -1,3 +1,6 @@
+using DataExplorer.Api.Commands;
+using Microsoft.OpenApi.Models;
+
 namespace DataExplorer.Api;
 
 public class Program
@@ -10,8 +13,22 @@ public class Program
         builder.Services.AddAuthorization();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddMediator();
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(c => 
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo 
+            { 
+                Title = "Data Explorer RPC API", 
+                Version = "v1",
+                Description = "This is an RPC API for the Data Explorer application.",
+                License = new OpenApiLicense
+                {
+                    Name = "Use under LICX",
+                    Url = new Uri("http://example.com/license")
+                }
+            });
+        });
 
         var app = builder.Build();
 
@@ -25,27 +42,7 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
-        var summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                        new WeatherForecast
-                        {
-                            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                            TemperatureC = Random.Shared.Next(-20, 55),
-                            Summary = summaries[Random.Shared.Next(summaries.Length)]
-                        })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast")
-            .WithOpenApi();
-
+        app.MapRpc();
         app.Run();
     }
 }
