@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace DataExplorer.Api.Commands.ExecuteSql;
+namespace DataExplorer.App.Commands.ExecuteSql;
 
 public class ExecuteSqlHandler : IRequestHandler<ExecuteSqlRequest, ExecuteSqlResponse>
 {

@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace DataExplorer.Api.Commands.TranslateNaturalLanguageToSql;
+namespace DataExplorer.App.Commands.TranslateNaturalLanguageToSql;
 
 public class TranslateNaturalLanguageToSqlHandler : IRequestHandler<TranslateNaturalLanguageToSqlRequest, TranslateNaturalLanguageToSqlResponse>
 {

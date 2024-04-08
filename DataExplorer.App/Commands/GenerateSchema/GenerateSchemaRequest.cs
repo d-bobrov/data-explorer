@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace DataExplorer.Api.Commands.GenerateSchema;
+namespace DataExplorer.App.Commands.GenerateSchema;
 
 public record GenerateSchemaRequest(Guid connectionId) : IRequest<GenerateSchemaResponse>
 {

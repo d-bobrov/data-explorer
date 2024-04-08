@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace DataExplorer.Api.Commands.DisposeConnection;
+namespace DataExplorer.App.Commands.DisposeConnection;
 
 public class DisposeConnectionHandler : IRequestHandler<DisposeConnectionRequest, DisposeConnectionResponse>
 {

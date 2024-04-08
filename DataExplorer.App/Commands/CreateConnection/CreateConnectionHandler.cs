@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace DataExplorer.Api.Commands.CreateConnection;
+namespace DataExplorer.App.Commands.CreateConnection;
 
 public class CreateConnectionHandler : IRequestHandler<CreateConnectionRequest, CreateConnectionResponse>
 {

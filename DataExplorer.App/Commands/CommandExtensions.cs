@@ -1,15 +1,13 @@
-using System.Net.Cache;
-using DataExplorer.Api.Commands.CreateConnection;
-using DataExplorer.Api.Commands.DisposeConnection;
-using DataExplorer.Api.Commands.ExecuteSql;
-using DataExplorer.Api.Commands.GenerateSchema;
-using DataExplorer.Api.Commands.TranslateNaturalLanguageToSql;
+using DataExplorer.App.Commands.CreateConnection;
+using DataExplorer.App.Commands.DisposeConnection;
+using DataExplorer.App.Commands.ExecuteSql;
+using DataExplorer.App.Commands.GenerateSchema;
+using DataExplorer.App.Commands.TranslateNaturalLanguageToSql;
 using DataExplorer.Common.SchemaGenerators.Models;
 using Mediator;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
-namespace DataExplorer.Api.Commands;
+namespace DataExplorer.App.Commands;
 
 public static class CommandExtensions
 {

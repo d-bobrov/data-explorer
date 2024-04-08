@@ -1,7 +1,7 @@
-using DataExplorer.Api.Commands;
+using DataExplorer.App.Commands;
 using Microsoft.OpenApi.Models;
 
-namespace DataExplorer.Api;
+namespace DataExplorer.App;
 
 public class Program
 {
@@ -24,8 +24,8 @@ public class Program
                 Description = "This is an RPC API for the Data Explorer application.",
                 License = new OpenApiLicense
                 {
-                    Name = "Use under LICX",
-                    Url = new Uri("http://example.com/license")
+                    Name = "Use Under MIT",
+                    Url = new Uri("http://https://opensource.org/license/mit")
                 }
             });
         });

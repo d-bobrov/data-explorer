@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExplorer.Common", "Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExplorer.Common.Tests", "DataExplorer.Common.Tests\DataExplorer.Common.Tests.csproj", "{84AAE4D4-8D6E-4E51-A16B-B63F3BC56B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExplorer.Api", "DataExplorer.Api\DataExplorer.Api.csproj", "{69F2BC1A-3926-4AF5-A308-7D27946DFE36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExplorer.App", "DataExplorer.App\DataExplorer.App.csproj", "{69F2BC1A-3926-4AF5-A308-7D27946DFE36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
