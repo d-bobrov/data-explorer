@@ -1,4 +1,6 @@
 using DataExplorer.App.Commands;
+using DataExplorer.App.Services;
+using DataExplorer.App.Services.Interfaces;
 using Microsoft.OpenApi.Models;
 
 namespace DataExplorer.App;
@@ -14,6 +16,7 @@ public class Program
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddMediator();
+        builder.Services.AddSingleton<IConnectionManager, ConnectionManager>();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(c => 
         {
