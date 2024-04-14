@@ -20,4 +20,4 @@ jobs:
     - name: Run .NET format
       run: dotnet format --no-restore --verify-no-changes
     - name: Builds the project
-      run: dotnet buld
+      run: dotnet build
