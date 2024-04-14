@@ -1,7 +1,7 @@
 # Data Explorer
 
 ![Discord](https://discordapp.com/api/guilds/1223002530074591365/widget.png?style=shield)
-![Built with .NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![Built with .NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white)  
 In today's data-driven world, the ability to explore and understand data is crucial. However, many non-technical individuals struggle with SQL queries and have a hard time verifying if their SQL gives the correct result. Data Explorer is here to help. With Data Explorer, you can query your data using natural language or even translate SQL queries into natural language. Simply ask a question or state a request in plain English, and Data Explorer will convert that into SQL to be executed against your database.
 
 This tool supports a wide range of databases including SQLite, MySQL, PostgreSQL, Oracle, and SQL Server. It's designed to be user-friendly and accessible to a wide range of users, from business analysts to product managers.
