@@ -15,6 +15,6 @@ public class QueryExecutor : IQueryExecutor
 
     public async Task<IEnumerable<dynamic>> ExecuteQueryAsync(string query)
     {
-            return await _connection.QueryAsync<dynamic>(query);
+        return await _connection.QueryAsync<dynamic>(query);
     }
 }

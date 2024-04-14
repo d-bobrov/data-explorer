@@ -23,19 +23,19 @@ public class SqliteSchemaGenerator : BaseSchemaGenerator
         List<SchemaTable> tablesViews = (await _connection.QueryAsync<SchemaTable>(FetchTablesViewsQuery)).ToList();
         if (tablesViews.Count > 0)
         {
-           foreach (var tableView in tablesViews)
-           {
-               var parameters = new Dictionary<string, object>()
+            foreach (var tableView in tablesViews)
+            {
+                var parameters = new Dictionary<string, object>()
                {
                    {
                        "table", tableView.Name
                    }
                };
-               List<ColumnInfo> columns = (await _connection.QueryAsync<ColumnInfo>(FetchColumns, parameters)).ToList();
-               tableView.Columns = columns;
-           }
+                List<ColumnInfo> columns = (await _connection.QueryAsync<ColumnInfo>(FetchColumns, parameters)).ToList();
+                tableView.Columns = columns;
+            }
             result.Tables = _mapTables(tablesViews);
-            
+
         }
 
         return result;
@@ -64,9 +64,9 @@ public class SqliteSchemaGenerator : BaseSchemaGenerator
         {
             result.Add(new TableColumn()
             {
-            Name    = columnFromDb.Name,
-            DataType = columnFromDb.Type,
-            IsPrimaryKey = columnFromDb.PrimaryKeyIndex > 0 ? true : false,
+                Name = columnFromDb.Name,
+                DataType = columnFromDb.Type,
+                IsPrimaryKey = columnFromDb.PrimaryKeyIndex > 0 ? true : false,
             });
         }
         return result;

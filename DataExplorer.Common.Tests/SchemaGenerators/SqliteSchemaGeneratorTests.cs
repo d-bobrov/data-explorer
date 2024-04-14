@@ -47,8 +47,8 @@ public class SqliteSchemaGeneratorTests : IDisposable
         var result = await generator.Generate();
 
         result.Tables.Should().BeEmpty();
-    } 
-    
+    }
+
     [Fact]
     public async void Generate_ShouldReturnCorrectNumberOfTables()
     {

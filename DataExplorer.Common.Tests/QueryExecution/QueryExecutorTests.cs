@@ -39,7 +39,7 @@ namespace DataExplorer.Common.Tests.QueryExecution
         public async Task QueryExecutor_ShouldIncludeColumnNamesInResult()
         {
             IEnumerable<dynamic> result = await _queryExecutor.ExecuteQueryAsync("SELECT * FROM Test;");
-            IDictionary<string,object> firstRow = result.First();
+            IDictionary<string, object> firstRow = result.First();
             ICollection<string> columnNames = ((IDictionary<string, object>)firstRow).Keys;
             columnNames.Should().Contain(new[] { "Id", "Name" });
         }
